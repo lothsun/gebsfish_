@@ -1,0 +1,5 @@
+.vs
+.idea
+*.ini
+*.bin
+.DS_Store

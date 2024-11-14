@@ -3,10 +3,10 @@ SETLOCAL
 
 @REM Set paths to tools and directories
 SET MakePboPath="C:\Program Files (x86)\Mikero\DePboTools\bin\MakePbo.exe"
-SET AddonBuilderPath="C:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin\AddonBuilder\AddonBuilder.exe"
+SET AddonBuilderPath="S:\SteamLibrary\steamapps\common\DayZ Tools\Bin\AddonBuilder\AddonBuilder.exe"
 
-SET ClientSource="P:\Mods\@Mod-Name"
-SET ClientOutput="P:\Mods\@Mod-Name\Addons"
+SET ClientSource="P:\gebsfish"
+SET ClientOutput="P:\Mods\@gebsfish\Addons"
 
 @REM Run AddonBuilder to pack the mod files
 %AddonBuilderPath% %ClientSource% %ClientOutput% -packonly -clear
@@ -22,3 +22,4 @@ IF %ERRORLEVEL% NEQ 0 (
     timeout /t 5 /nobreak
     exit
 )
+
