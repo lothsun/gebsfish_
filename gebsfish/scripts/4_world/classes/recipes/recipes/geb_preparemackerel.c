@@ -1,5 +1,4 @@
-class PrepareAngelfish extends PrepareFish
-{
+modded class PrepareMackerel extends PrepareFish {
 	int ran;	
 	override void Init(){
 		super.Init();
@@ -7,7 +6,7 @@ class PrepareAngelfish extends PrepareFish
 		
 		//INGREDIENTS
 		//ingredient 1
-		InsertIngredient(0,"geb_Angelfish");//you can insert multiple ingredients this way
+		InsertIngredient(0,"Mackerel");//you can insert multiple ingredients this way
 
 		m_IngredientAddHealth[0] = 0;// 0 = do nothing
 		m_IngredientSetHealth[0] = -1; // -1 = do nothing
@@ -18,9 +17,9 @@ class PrepareAngelfish extends PrepareFish
 		
 		m_IngredientAddHealth[1] = -4;// 0 = do nothing // damages health of knife/tool from the fillet action
 		//----------------------------------------------------------------------------------------------------------------------
-		ran = Math.RandomFloatInclusive(m_gebsConfig.Angelfish.MeatMin,m_gebsConfig.Angelfish.MeatMax);
+		ran = Math.RandomFloatInclusive(m_gebsConfig.Mackerel.MeatMin,m_gebsConfig.Mackerel.MeatMax);
 		for (int i = 0; i < ran; ++i){
-			AddResult("geb_AngelfishFilletMeat");//add results here
+			AddResult("MackerelFilletMeat");//add results here
 			m_ResultSetFullQuantity[i] = false;//true = set full quantity, false = do nothing
 			m_ResultSetQuantity[i] = -1;//-1 = do nothing
 			m_ResultSetHealth[i] = -1;//-1 = do nothing

@@ -2,7 +2,7 @@
 
   CREATED BY PACKJC
   https://github.com/PackJC/gebsfish
-  https://steamcommunity.com/sharedfiles/filedetails/?id=2757109117
+  https://steamcommunity.com/sharedfiles/filedetails/?id=2757509117
   https://discord.com/invite/G8uSGZ8yyf
   Contributions welcome via github
 
@@ -49,72 +49,72 @@ class FileReader
 		}
 
 		//If the folders don't exist, create them
-		if (!FileExist(SALT_CONFIG_PATH))
-		{
-			CreateConfig(SALT_CONFIG_PATH);
-		}
-		if (!FileExist(FRESH_CONFIG_PATH))
-		{
-			CreateConfig(FRESH_CONFIG_PATH);
-		}
+		// if (!FileExist(SALT_CONFIG_PATH))
+		// {
+		// 	CreateConfig(SALT_CONFIG_PATH);
+		// }
+		// if (!FileExist(FRESH_CONFIG_PATH))
+		// {
+		// 	CreateConfig(FRESH_CONFIG_PATH);
+		// }
 		if (!FileExist(BUG_CONFIG_PATH))
 		{
 			CreateConfig(BUG_CONFIG_PATH);
 		}
 
-		//If file exists, open it and read files
-		if (FileExist(SALT_CONFIG_PATH))
-		{
-			FileHandle salt_file = OpenFile(SALT_CONFIG_PATH, FileMode.READ);
-			string salt_line;
-			while (FGets(salt_file, salt_line) != -1)
-			{
-				//geb_Bluegill=30 = map["bluegill"] = 30
-				salt_line.Trim();
-				int tokenIndex = salt_line.IndexOf("=");
-				int lengthIndex = salt_line.Length() - tokenIndex;
-				salt_chance_map[salt_line.Substring(0, tokenIndex)] = (salt_line.Substring(tokenIndex + 1, lengthIndex - 1)).ToFloat();
+		// //If file exists, open it and read files
+		// if (FileExist(SALT_CONFIG_PATH))
+		// {
+		// 	FileHandle salt_file = OpenFile(SALT_CONFIG_PATH, FileMode.READ);
+		// 	string salt_line;
+		// 	while (FGets(salt_file, salt_line) != -1)
+		// 	{
+		// 		//geb_Bluegill=30 = map["bluegill"] = 30
+		// 		salt_line.Trim();
+		// 		int tokenIndex = salt_line.IndexOf("=");
+		// 		int lengthIndex = salt_line.Length() - tokenIndex;
+		// 		salt_chance_map[salt_line.Substring(0, tokenIndex)] = (salt_line.Substring(tokenIndex + 1, lengthIndex - 1)).ToFloat();
 
-			}
-			//This is to force adding new fish, so when server owner updates it should include new fish
-			if (salt_chance_map.Contains("geb_BLUELOBSTER_CHANCE")) {
-				newSaltFishDetected = true;
-			}
-			if (!newSaltFishDetected) {
-			//add new freshwater fish here to update old configs
-				FPrintln(salt_file, "geb_BLOODCLAM_CHANCE=10");
-				FPrintln(salt_file, "geb_MUSSEL_CHANCE=10");
-				FPrintln(salt_file, "geb_BLACKDEVILSNAIL_CHANCE=10");
-				FPrintln(salt_file, "geb_LOBSTER_CHANCE=10");
-				FPrintln(salt_file, "geb_BLUELOBSTER_CHANCE=10");
-			}
-			CloseFile(salt_file);
-		}
+		// 	}
+		// 	//This is to force adding new fish, so when server owner updates it should include new fish
+		// 	if (salt_chance_map.Contains("geb_BLUELOBSTER_CHANCE")) {
+		// 		newSaltFishDetected = true;
+		// 	}
+		// 	if (!newSaltFishDetected) {
+		// 	//add new freshwater fish here to update old configs
+		// 		FPrintln(salt_file, "geb_BLOODCLAM_CHANCE=10");
+		// 		FPrintln(salt_file, "geb_MUSSEL_CHANCE=10");
+		// 		FPrintln(salt_file, "geb_BLACKDEVILSNAIL_CHANCE=10");
+		// 		FPrintln(salt_file, "geb_LOBSTER_CHANCE=10");
+		// 		FPrintln(salt_file, "geb_BLUELOBSTER_CHANCE=10");
+		// 	}
+		// 	CloseFile(salt_file);
+		// }
 
-		//Open fresh fish config if exist
-		if (FileExist(FRESH_CONFIG_PATH))
-		{
-			FileHandle fresh_file = OpenFile(FRESH_CONFIG_PATH, FileMode.READ);
-			string fresh_line;
-			while (FGets(fresh_file, fresh_line) != -1)
-			{
-				//geb_Bluegill=30 = map["bluegill"] = 30
-				fresh_line.Trim();
-				int tokenIndex2 = fresh_line.IndexOf("=");
-				int lengthIndex2 = fresh_line.Length() - tokenIndex2;
-				string name = salt_line.Substring(0, tokenIndex);
+		// //Open fresh fish config if exist
+		// if (FileExist(FRESH_CONFIG_PATH))
+		// {
+		// 	FileHandle fresh_file = OpenFile(FRESH_CONFIG_PATH, FileMode.READ);
+		// 	string fresh_line;
+		// 	while (FGets(fresh_file, fresh_line) != -1)
+		// 	{
+		// 		//geb_Bluegill=30 = map["bluegill"] = 30
+		// 		fresh_line.Trim();
+		// 		int tokenIndex2 = fresh_line.IndexOf("=");
+		// 		int lengthIndex2 = fresh_line.Length() - tokenIndex2;
+		// 		string name = salt_line.Substring(0, tokenIndex);
 
-				fresh_chance_map[fresh_line.Substring(0, tokenIndex2)] = (fresh_line.Substring(tokenIndex2 + 1, lengthIndex2 - 1)).ToFloat();
-			}
-			//This is to force adding new fish, so when server owner updates it should include new fish
-			if (fresh_chance_map.Contains("geb_SMALLMOUTHBASS_CHANCE")) {
-				newFreshFishDetected = true;
-			}
-			if (!newFreshFishDetected) {
-				//add new freshwater fish here to update old configs
-			}
-			CloseFile(fresh_file);
-		}
+		// 		fresh_chance_map[fresh_line.Substring(0, tokenIndex2)] = (fresh_line.Substring(tokenIndex2 + 1, lengthIndex2 - 1)).ToFloat();
+		// 	}
+		// 	//This is to force adding new fish, so when server owner updates it should include new fish
+		// 	if (fresh_chance_map.Contains("geb_SMALLMOUTHBASS_CHANCE")) {
+		// 		newFreshFishDetected = true;
+		// 	}
+		// 	if (!newFreshFishDetected) {
+		// 		//add new freshwater fish here to update old configs
+		// 	}
+		// 	CloseFile(fresh_file);
+		// }
 
 		//Open bug config if exist
 		if (FileExist(BUG_CONFIG_PATH))
