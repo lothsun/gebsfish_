@@ -1,6 +1,6 @@
 modded class PlayerBase extends ManBase
 {
-    const int RPC_PLAY_PREDATOR_SOUND = 2757509117; // Unique ID for the predator sound RPC
+    // const int RPC_PLAY_PREDATOR_SOUND = 2757509117; // Unique ID for the predator sound RPC
     override void OnRPC(PlayerIdentity sender, int rpc_type, ParamsReadContext ctx)
     {
         super.OnRPC(sender, rpc_type, ctx);

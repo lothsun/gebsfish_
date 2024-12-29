@@ -1,5 +1,13 @@
+// Define RPC constant for predator sound
+const int RPC_PLAY_PREDATOR_SOUND = 2757509117; // Unique ID for the predator sound RPC
+
 class gebsfishConfig{
+
+    //Define Config Version
     static const string CONFIG_VERSION = "0.1";
+
+    // Define RPC constant for predator sound
+    const int RPC_PLAY_PREDATOR_SOUND = 2757509117; // Unique ID for the predator sound RPC
 
     //config location
     private const static string ModFolder = "$profile:\\gebsfish\\";
@@ -10,6 +18,7 @@ class gebsfishConfig{
     //Config Reference 
     string ConfigVersion = "";
     ref GenSetConf GeneralSettings;
+    ref PredatorConf PredatorSettings;
     // ref LogConf CFToolsLogging;
     ref array<ref PredatorEntry> Predators;
     ref BugConf Bugs;
@@ -79,25 +88,29 @@ class gebsfishConfig{
             if (FileExist(ModFolder + SettingsConfigFile)){
                 //If config exists, load file
                 JsonFileLoader<gebsfishConfig>.JsonLoadFile(ModFolder + SettingsConfigFile, this);
+                Print("[gebsfish] [JSON] Found settings file; Loading gebsfish settings.");
                 // If version mismatch, backup old version of json before replacing it
                 if (ConfigVersion != CONFIG_VERSION){
                     JsonFileLoader<gebsfishConfig>.JsonSaveFile(ModFolder + FileName + "_old" + FileType, this);
+                    Print("[gebsfish] [JSON] New config version found for mod; Backing up old file and saving as " + ModFolder + FileName + "_old" + FileType + " and generating new config file.");
                 }
                 else {
                     // Config exists and version matches, stop here.
                     return;
                 }
             }
+        Print("[gebsfish] [JSON] Generating settings file.");
         //Save config file version to file
         ConfigVersion = CONFIG_VERSION;
         //Save general settings to file
         GeneralSettings = new GenSetConf;
         //Save CF Tools logging settings to file
-        // CFToolsLogging = new LogConf;
+        CFToolsLogging = new LogConf;
         //Save predator config data to the file 
+        PredatorSettings = new PredatorConf;
         Predators = new array<ref PredatorEntry>();
         //Save bugs config data to file
-        Bugs = new BugConf;
+        Bugs = new array<ref BugEntry>();
         //Save fish config data to file
         Mackerel = new MackerelConf;
         Carp = new CarpConf;
@@ -162,6 +175,28 @@ class gebsfishConfig{
         Junk = new JunkConf;
         ContainerJunk = new ContainerJunkConf;
 
+        //Add default bug data to file
+
+        BugEntry FieldCricket = new BugEntry();
+        FieldCricket.Classname = "geb_FieldCricket";
+        FieldCricket.CatchChance = 0.25;
+
+        BugEntry GrassHopper = new BugEntry();
+        GrassHopper.Classname = "geb_GrassHopper";
+        GrassHopper.CatchChance = 0.25;
+
+        BugEntry GrubWorm = new BugEntry();
+        GrubWorm.Classname = "geb_GrubWorm";
+        GrubWorm.CatchChance = 0.75;
+
+        BugEntry Worm = new BugEntry();
+        Worm.Classname = "geb_Worm";
+        Worm.CatchChance = 0.25;
+
+        Bugs.Insert(FieldCricket);
+        Bugs.Insert(GrassHopper);
+        Bugs.Insert(GrubWorm);
+        Bugs.Insert(Worm);
 
         //Add default predator data to file
 
@@ -197,6 +232,7 @@ class gebsfishConfig{
         }
         //Save JSON Config
         JsonFileLoader<gebsfishConfig>.JsonSaveFile(ModFolder + SettingsConfigFile, this);
+        Print("[gebsfish] [JSON] Settigns file generation complete!");
     }
 }
 
@@ -206,21 +242,34 @@ class GenSetConf {
     bool DebugLogs = 0;
     string FishQualityInfo = "Sets the base value for the fish quanity bar";
     float FishQuality = 1;
-    string PredatorSpawnEnabledInfo = "Turns on(1) and off(0) the predators feature of the mod. When on, it will enable the random spawning of predators when catching/cutting up the fish.";
-    bool PredatorSpawnEnabled = 1;
-    string PredatorSpawnChanceInfo = "Controls the chance for a predator to spawn when a fish is caught or cut up. Fishing is when fishing, preparing is when getting fillets";
-    float PredatorSpawnChanceFishing = 0.25;
-    float PredatorSpawnChancePreparing = 0.25;
+    
 };
 
 //cftools logging config data
 class LogConf {
-
+    string LoggingInfo = "Requires the ExtraLogs mod by TRG to use this section.";
+    bool CatchLogs = 0;
+    bool PredatorSpawn = 0;
+    bool PredatorSounds = 0;
 };
 
 //predator animals config data
 class PredatorConf {
-    
+    string PredatorSpawnEnabledInfo = "Turns on(1) and off(0) the predators feature of the mod. When on, it will enable the random spawning of predators when catching/cutting up the fish.";
+    bool PredatorSpawnEnabled = 1;
+    string PredatorSpawnChanceInfo = "Controls the chance for a predator to spawn when a fish is caught or cut up. Fishing is when fishing, preparing is when getting fillets, failcatch is when nothing is caught.";
+    float PredatorSpawnChanceFishing = 0.25;
+    float PredatorSpawnChancePreparing = 0.25;
+    float PredatorSpawnChanceFailCatch = 0.01;
+    string PredatorSpawnSoundInfo = "PredatorWarningSoundEnable controls the audible notification and PredatorWarningSoundRadius controls how far players hear the sound from the triggering player.";
+    bool PredatorWarningSoundEnable = 1;
+    int PredatorWarningSoundRadius = 50;
+    string PredatorWarningMessageInfo = "PredatorWarningMessageEnable turns the chat message on and off, PredatorWarningMessage'Color' controls the color of the text. Only set one of the colors to on at a time.";
+    bool PredatorWarningMessageEnable = 1;
+    bool PredatorWarningMessageGreen = 0;
+    bool PredatorWarningMessageRed = 0;
+    bool PredatorWarningMessageYellow = 1;
+    bool PredatorWarningMessageGrey = 0;
 }
 
 class PredatorEntry {
@@ -233,6 +282,12 @@ class PredatorEntry {
 }
 
 //bug config data
+
+class BugEntry {
+    string Classname;
+    int CatchChance;
+}
+
 class BugConf {
     string NotImplemented = "This section is not implemented yet. Please use the old bugs.cfg file to configure the bugs."
     string BugInfo = "Controls catch chance for each bug when using the bug catcher. 0-25."

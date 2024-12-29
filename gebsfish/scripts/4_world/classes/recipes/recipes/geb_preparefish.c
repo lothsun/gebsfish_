@@ -1,5 +1,4 @@
 modded class PrepareFish {
-    const int RPC_PLAY_PREDATOR_SOUND = 2757509117; // Unique ID for the predator sound RPC
     override void Init() {
 		super.Init();
         GetGebSettingsConfig();
@@ -19,15 +18,14 @@ modded class PrepareFish {
 		// Adjusts quantity of results to the quantity of the 1st ingredient
 		super.Do(ingredients, player, results, specialty_weight);
         // Trigger predator spawning
-        ItemBase knife = ingredients[1];
-		TrySpawnPredator(player, knife);
+		TrySpawnPredator(player);
 	}
 
-    void TrySpawnPredator(PlayerBase player, ItemBase item){
+    void TrySpawnPredator(PlayerBase player){
 		if (!GetGame().IsServer() || !m_gebsConfig) return;
 
 		// Check if predator spawning is enabled
-		if (!m_gebsConfig.GeneralSettings.PredatorSpawnEnabled)
+		if (!m_gebsConfig.PredatorSettings.PredatorSpawnEnabled)
 		{
 			if(m_gebsConfig.GeneralSettings.DebugLogs){
                 Print("[gebsfish] [Predator] Predator spawning is disabled.");
@@ -36,7 +34,7 @@ modded class PrepareFish {
 		}
 
 		// Global spawn chance check
-		if (Math.RandomFloat(0, 1) > m_gebsConfig.GeneralSettings.PredatorSpawnChancePreparing)
+		if (Math.RandomFloat(0, 1) > m_gebsConfig.PredatorSettings.PredatorSpawnChancePreparing)
 		{
 			if(m_gebsConfig.GeneralSettings.DebugLogs){
                 Print("[gebsfish] [Predator] Global spawn chance failed.");
@@ -65,7 +63,24 @@ modded class PrepareFish {
 			}
 
             //Send message to the player
-            player.MessageAction("Your activities have attracted some company...");
+			if(m_gebsConfig.PredatorSettings.PredatorWarningMessageEnable){
+				//Send message to the player in green
+				if(m_gebsConfig.PredatorSettings.PredatorWarningMessageGreen){
+					player.MessageFriendly("Your activities have attracted some company...");
+				}
+				//Send message to the player in grey
+				if(m_gebsConfig.PredatorSettings.PredatorWarningMessageGrey){
+					player.MessageStatus("Your activities have attracted some company...");
+				}
+				//Send message to the player in red
+				if(m_gebsConfig.PredatorSettings.PredatorWarningMessageRed){
+					player.MessageImportant("Your activities have attracted some company...");
+				}
+				//Send message to the player in yellow
+				if(m_gebsConfig.PredatorSettings.PredatorWarningMessageYellow){
+					player.MessageAction("Your activities have attracted some company...");
+				}
+			}
 		}
 		else
 		{
@@ -122,15 +137,44 @@ modded class PrepareFish {
 			if(m_gebsConfig.GeneralSettings.DebugLogs){
                 Print("[gebsfish] [Predator] Spawned " + classname + " at " + position.ToString());
             }
+
+			#ifdef EXTRALOGS
+				if(m_gebsConfig.CFToolsLogging.PredatorSpawn) {
+					SendToCFToolsLog(triggeringPlayer.GetIdentity().GetName(),"Predator spawned" + classname + " at " + position.ToString());
+				}
+			#endif
             
-            // Send RPC to play the sound for the triggering player
-            if (!soundPlayed && GetGame().IsServer())
-            {
-                Param1<string> rpcData = new Param1<string>("PredatorWarning_SoundSet"); // Replace with your desired sound set
-                triggeringPlayer.RPCSingleParam(RPC_PLAY_PREDATOR_SOUND, rpcData, true, triggeringPlayer.GetIdentity());
-                Print("[PredatorSpawn] Sent RPC to play sound for triggering player.");
-                soundPlayed = true; // Mark the sound as played
-            }
+			// Send RPC to all players within 50 meters
+			if (!soundPlayed && GetGame().IsServer())
+			{
+				array<Man> players = new array<Man>();
+				GetGame().GetPlayers(players);
+
+				foreach (Man player : players)
+				{
+					PlayerBase nearbyPlayer = PlayerBase.Cast(player);
+					if (nearbyPlayer)
+					{
+						float distance = vector.Distance(triggeringPlayer.GetPosition(), nearbyPlayer.GetPosition());
+						if (distance <= m_gebsConfig.PredatorSettings.PredatorWarningSoundRadius) {    // Distance from triggering player
+							Param1<string> rpcData = new Param1<string>("PredatorWarning_SoundSet");
+							nearbyPlayer.RPCSingleParam(RPC_PLAY_PREDATOR_SOUND, rpcData, true, nearbyPlayer.GetIdentity());
+							if(m_gebsConfig.GeneralSettings.DebugLogs){
+								Print("[gebsfish] [Predator] Sent RPC to play sound for player within 50 meters: " + nearbyPlayer.GetIdentity().GetName());
+							}
+							#ifdef EXTRALOGS
+                                if(m_gebsConfig.CFToolsLogging.PredatorSounds) {
+                                    SendToCFToolsLog(nearbyPlayer.GetIdentity().GetName(),"Predator sound played for player within 50 meters of triggering player");
+                                }
+                            #endif
+						}
+					}
+
+				}
+
+
+				soundPlayed = true; // Mark the sound as played
+			}
 		}
 		else
 		{
@@ -139,115 +183,4 @@ modded class PrepareFish {
             }
 		}
 	}
-
-//     void TrySpawnPredator(PlayerBase player, ItemBase item)
-//     {
-//         if (!GetGame().IsServer() || !m_gebsConfig) return;
-
-//         // Check if predator spawning is enabled
-//         if (!m_gebsConfig.GeneralSettings.PredatorSpawnEnabled)
-//         {
-//             Print("[PredatorSpawn] Predator spawning is disabled.");
-//             return;
-//         }
-
-//         // Global spawn chance check
-//         if (Math.RandomFloat(0, 1) > m_gebsConfig.GeneralSettings.PredatorSpawnChancePreparing)
-//         {
-//             Print("[PredatorSpawn] Global spawn chance failed.");
-//             return;
-//         }
-
-//         vector playerPosition = player.GetPosition();
-//         Print("[PredatorSpawn] Global spawn chance passed. Selecting predator to spawn.");
-
-//         PredatorEntry selectedPredator = GetRandomPredatorEntry();
-//         if (selectedPredator)
-//         {
-//             int count = Math.RandomInt(selectedPredator.MinCount, selectedPredator.MaxCount + 1);
-//             Print("[PredatorSpawn] Spawning " + count + " " + selectedPredator.Classname + " around player.");
-            
-//             bool soundPlayed = false; // Initialize sound flag
-//             for (int i = 0; i < count; i++)
-//             {
-//                 vector spawnPos = GenerateSpawnPosition(playerPosition, selectedPredator.MinRadius, selectedPredator.MaxRadius);
-//                 SpawnPredator(selectedPredator.Classname, spawnPos, player, item, soundPlayed);
-//             }
-
-//             // Send message to the player
-//             player.MessageAction("Your activities have attracted some company...");
-//         }
-//         else
-//         {
-//             Print("[PredatorSpawn] No predator was selected to spawn.");
-//         }
-//     }
-
-//     void SpawnPredator(string classname, vector position, PlayerBase triggeringPlayer, ItemBase item, out bool soundPlayed)
-//     {
-//         static const string         PRED_WARNING_SOUND = "PredatorWarning_SoundSet";
-
-//         protected EffectSound       m_PredatorWarningSound;
-
-//         Object predator = GetGame().CreateObject(classname, position, false, true);
-//         Print("[PredatorAudio] Test 1");
-//         if (predator)
-//         {
-//             Print("[PredatorSpawn] Spawned " + classname + " at " + position.ToString());
-//             Print("[PredatorAudio] Test 2");
-//             // Play sound only if it hasn't been played yet
-//             if (!soundPlayed )
-//             {
-//                 EffectSound effect_sound;
-//                 Print("[PredatorAudio] Test 3");
-//                 item.PlaySound( PRED_WARNING_SOUND, 10 );
-//                 // effect_sound = SEffectManager.PlaySoundOnObject(PRED_WARNING_SOUND, item, 0, 0);
-//                 Print("[PredatorAudio] Played sound: " + PRED_WARNING_SOUND + " for triggering player.");
-//                 soundPlayed = true; // Mark the sound as played
-//             }
-//         }
-//         else
-//         {
-//             Print("[PredatorSpawn] Failed to spawn " + classname);
-//         }
-//     }
-
-//     PredatorEntry GetRandomPredatorEntry()
-//     {
-//         float totalWeight = 0;
-//         foreach (PredatorEntry predator1 : m_gebsConfig.Predators)
-//         {
-//             totalWeight += predator1.SpawnChance;
-//         }
-
-//         if (totalWeight == 0)
-//         {
-//             Print("[PredatorSpawn] No predators have valid spawn chances.");
-//             return null;
-//         }
-
-//         float randomValue = Math.RandomFloat(0, totalWeight);
-//         float cumulativeWeight = 0;
-
-//         foreach (PredatorEntry predator : m_gebsConfig.Predators)
-//         {
-//             cumulativeWeight += predator.SpawnChance;
-//             if (randomValue <= cumulativeWeight)
-//             {
-//                 return predator;
-//             }
-//         }
-
-//         return null;
-//     }
-
-//     vector GenerateSpawnPosition(vector center, float minRadius, float maxRadius)
-//     {
-//         float angle = Math.RandomFloat(0, 360);
-//         float distance = Math.RandomFloat(minRadius, maxRadius);
-//         float xOffset = Math.Cos(angle) * distance;
-//         float zOffset = Math.Sin(angle) * distance;
-
-//         return Vector(center[0] + xOffset, center[1], center[2] + zOffset);
-//     }
 }
