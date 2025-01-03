@@ -139,9 +139,9 @@ class ActionDigBugs : ActionContinuousBase
 		string selectedBug = "";
 
 		// Calculate the total spawn chance for all bugs
-		foreach (BugEntry bug : m_gebsConfig.Bugs)
+		foreach (BugEntry bug1 : m_gebsConfig.Bugs)
 		{
-			bugSum += bug.SpawnChance;
+			bugSum += bug1.CatchChance;
 		}
 
 		// Generate a random value within the total spawn chance
@@ -150,12 +150,12 @@ class ActionDigBugs : ActionContinuousBase
 		// Select a bug based on the random value
 		foreach (BugEntry bug : m_gebsConfig.Bugs)
 		{
-			if (rndBug <= bug.SpawnChance && bug.SpawnChance > 0)
+			if (rndBug <= bug.CatchChance && bug.CatchChance > 0)
 			{
 				selectedBug = bug.Classname;
 				break;
 			}
-			rndBug -= bug.SpawnChance;
+			rndBug -= bug.CatchChance;
 		}
 
 		// Spawn the selected bug if one was found

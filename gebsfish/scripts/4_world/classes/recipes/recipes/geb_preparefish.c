@@ -138,9 +138,10 @@ modded class PrepareFish {
                 Print("[gebsfish] [Predator] Spawned " + classname + " at " + position.ToString());
             }
 
-			#ifdef EXTRALOGS
+			#ifdef ExtraLogs
 				if(m_gebsConfig.CFToolsLogging.PredatorSpawn) {
-					SendToCFToolsLog(triggeringPlayer.GetIdentity().GetName(),"Predator spawned" + classname + " at " + position.ToString());
+					string gebpredatorspawnmessage = "Predator " + classname + " spawned at " + position.ToString();
+					SendToCFTools(triggeringPlayer, "" , "" , gebpredatorspawnmessage);
 				}
 			#endif
             
@@ -160,11 +161,12 @@ modded class PrepareFish {
 							Param1<string> rpcData = new Param1<string>("PredatorWarning_SoundSet");
 							nearbyPlayer.RPCSingleParam(RPC_PLAY_PREDATOR_SOUND, rpcData, true, nearbyPlayer.GetIdentity());
 							if(m_gebsConfig.GeneralSettings.DebugLogs){
-								Print("[gebsfish] [Predator] Sent RPC to play sound for player within 50 meters: " + nearbyPlayer.GetIdentity().GetName());
+								Print("[gebsfish] [Predator] Sent RPC to play sound for player within 50 meters of " + triggeringPlayer.GetIdentity().GetName() + ": " + nearbyPlayer.GetIdentity().GetName());
 							}
-							#ifdef EXTRALOGS
+							#ifdef ExtraLogs
                                 if(m_gebsConfig.CFToolsLogging.PredatorSounds) {
-                                    SendToCFToolsLog(nearbyPlayer.GetIdentity().GetName(),"Predator sound played for player within 50 meters of triggering player");
+									string gebpredatorsoundmessage = "Predator sound played for player within 50 meters of " + triggeringPlayer.GetIdentity().GetName();
+                                    SendToCFTools(nearbyPlayer , "" , "" , gebpredatorsoundmessage);
                                 }
                             #endif
 						}

@@ -19,9 +19,9 @@ class gebsfishConfig{
     string ConfigVersion = "";
     ref GenSetConf GeneralSettings;
     ref PredatorConf PredatorSettings;
-    // ref LogConf CFToolsLogging;
+    ref LogConf CFToolsLogging;
     ref array<ref PredatorEntry> Predators;
-    ref BugConf Bugs;
+    ref array<ref BugEntry> Bugs;
     ref MackerelConf Mackerel;
     ref CarpConf Carp;
     ref SardinesConf Sardines;
@@ -285,12 +285,12 @@ class PredatorEntry {
 
 class BugEntry {
     string Classname;
-    int CatchChance;
+    float CatchChance;
 }
 
 class BugConf {
-    string NotImplemented = "This section is not implemented yet. Please use the old bugs.cfg file to configure the bugs."
-    string BugInfo = "Controls catch chance for each bug when using the bug catcher. 0-25."
+    string NotImplemented = "This section is not implemented yet. Please use the old bugs.cfg file to configure the bugs.";
+    string BugInfo = "Controls catch chance for each bug when using the bug catcher. 0-25.";
     int Worm = 10;
     int GrassHopper = 10;
     int GrubWorm = 10;

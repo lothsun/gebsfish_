@@ -13,10 +13,20 @@ modded class ActionFishingNew: ActionContinuousBase {
             if (fad.m_FishingResult == 1) // Assuming 1 indicates success
             {
                 TrySpawnPredator(fad);
-                #ifdef EXTRALOGS
-                    if(m_gebsConfig.CFToolsLogging.CatchLogs) {
-                        SendToCFToolsLog(player.GetIdentity().GetName(),"Caught a " + classname + " at " + position.ToString());
-                    }
+                string gebcatchtype = fad.m_ContextData.GebGetCatchingResult();
+                string gebcatchname = GetDisplayNameFromTypeName(gebcatchtype);
+				string gebcatchitem = fad.m_MainItem.GetType();
+				string gebcatchitemname = GetDisplayNameFromTypeName(gebcatchitem);
+				string gebcatchmessage = "Caught a " + gebcatchname + " with a " + gebcatchitemname;
+                Print(gebcatchtype);
+                Print(gebcatchname);
+				Print(gebcatchitem);
+				Print(gebcatchitemname);
+
+                #ifdef ExtraLogs
+				if(m_gebsConfig.CFToolsLogging.CatchLogs) {
+					SendToCFTools(player, "", "", gebcatchmessage);
+				}
                 #endif
             }
             else if (Math.RandomFloat(0, 1) <= m_gebsConfig.PredatorSettings.PredatorSpawnChanceFailCatch) // 1% chance to spawn even on failure
@@ -27,6 +37,24 @@ modded class ActionFishingNew: ActionContinuousBase {
                 TrySpawnPredator(fad);
             }
         }
+    }
+
+    string GetDisplayNameFromTypeName(string typeName) {
+
+        // Find the display name in the config
+        string displayName = "";
+        if (GetGame().ConfigIsExisting("CfgVehicles " + typeName))
+        {
+            displayName = GetGame().ConfigGetTextOut("CfgVehicles " + typeName + " displayName");
+        }
+        
+        // Return display name or fallback to type name if not found
+        if (displayName == "")
+        {
+            return typeName; // Fallback to type name if no display name is found
+        }
+
+        return displayName;
     }
 
     void TrySpawnPredator(FishingActionData action_data){
@@ -147,9 +175,10 @@ modded class ActionFishingNew: ActionContinuousBase {
                 Print("[gebsfish] [Predator] Spawned " + classname + " at " + position.ToString());
             }
 
-            #ifdef EXTRALOGS
+            #ifdef ExtraLogs
 				if(m_gebsConfig.CFToolsLogging.PredatorSpawn) {
-					SendToCFToolsLog(triggeringPlayer.GetIdentity().GetName(),"Predator spawned" + classname + " at " + position.ToString());
+					string gebpredatorspawnmessage = "Predator " + classname + " spawned at " + position.ToString();
+					SendToCFTools(triggeringPlayer, "" , "" , gebpredatorspawnmessage);
 				}
 			#endif
             
@@ -169,11 +198,12 @@ modded class ActionFishingNew: ActionContinuousBase {
 							Param1<string> rpcData = new Param1<string>("PredatorWarning_SoundSet");
 							nearbyPlayer.RPCSingleParam(RPC_PLAY_PREDATOR_SOUND, rpcData, true, nearbyPlayer.GetIdentity());
 							if(m_gebsConfig.GeneralSettings.DebugLogs){
-								Print("[gebsfish] [Predator] Sent RPC to play sound for player within 50 meters: " + nearbyPlayer.GetIdentity().GetName());
+								Print("[gebsfish] [Predator] Sent RPC to play sound for player within 50 meters of " + triggeringPlayer.GetIdentity().GetName() + ": " + nearbyPlayer.GetIdentity().GetName());
 							}
-                            #ifdef EXTRALOGS
+							#ifdef ExtraLogs
                                 if(m_gebsConfig.CFToolsLogging.PredatorSounds) {
-                                    SendToCFToolsLog(nearbyPlayer.GetIdentity().GetName(),"Predator sound played for player within 50 meters of triggering player");
+									string gebpredatorsoundmessage = "Predator sound played for player within 50 meters of " + triggeringPlayer.GetIdentity().GetName();
+                                    SendToCFTools(nearbyPlayer , "" , "" , gebpredatorsoundmessage);
                                 }
                             #endif
 						}

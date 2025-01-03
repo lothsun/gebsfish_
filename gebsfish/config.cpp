@@ -43,6 +43,11 @@ class CfgMods
 			"World",
 			"Mission"
 		};
+		defines[]=
+		{
+			"Gebsfish",
+			"GEBSFISH"
+		};
 		class defs
 		{
 			class gameScriptModule
@@ -85,7 +90,12 @@ class CfgSoundSets {
 
 class CfgSoundShaders {
     class PredatorWarning_SoundShader {
-        samples[] = { { "gebsfish\data\sounds\predator.ogg", 1 } };
+        samples[] = { 
+			{ "gebsfish\data\sounds\predator.ogg", 1 },
+			{ "gebsfish\data\sounds\loon-wail-3x.ogg", 1 } ,
+			{ "gebsfish\data\sounds\loon-short-warning.ogg", 1 } 
+			
+		};
         volume = 1.0;
     };
 };
