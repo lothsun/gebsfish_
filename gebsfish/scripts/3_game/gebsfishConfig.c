@@ -305,7 +305,7 @@ class MackerelConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -319,7 +319,7 @@ class CarpConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -331,9 +331,6 @@ class SardinesConf {
     int Environment = 2;
     string CatchMethodInfo = "1 - rod, 2 - largetrap, 3 - rod and largetrap, 4 - smalltrap, 5 - rod and smalltrap, 6 - largetrap and smalltrap, 7 - rod, largetrap and smalltrap";
     int CatchMethod = 4;
-    string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
-    float MeatMin = 1;
-    float MeatMax = 1;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -345,9 +342,6 @@ class BitterlingsConf {
     int Environment = 1;
     string CatchMethodInfo = "1 - rod, 2 - largetrap, 3 - rod and largetrap, 4 - smalltrap, 5 - rod and smalltrap, 6 - largetrap and smalltrap, 7 - rod, largetrap and smalltrap";
     int CatchMethod = 4;
-    string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
-    float MeatMin = 1;
-    float MeatMax = 1;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -361,7 +355,7 @@ class WalleyePollockConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 24;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -375,7 +369,7 @@ class SteelheadTroutConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 12;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -387,9 +381,6 @@ class ShrimpConf {
     int Environment = 2;
     string CatchMethodInfo = "1 - rod, 2 - largetrap, 3 - rod and largetrap, 4 - smalltrap, 5 - rod and smalltrap, 6 - largetrap and smalltrap, 7 - rod, largetrap and smalltrap";
     int CatchMethod = 4;
-    string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
-    float MeatMin = 1;
-    float MeatMax = 1;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 1;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -403,7 +394,7 @@ class NorthernPikeConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -417,7 +408,7 @@ class LargemouthBassConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -431,7 +422,7 @@ class SmallmouthBassConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -445,7 +436,7 @@ class WalleyeConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -459,7 +450,7 @@ class SunfishConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -473,7 +464,7 @@ class WhiteBassConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -487,7 +478,7 @@ class BlackBassConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -501,7 +492,7 @@ class RainbowTroutConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -515,7 +506,7 @@ class BrownTroutConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -529,7 +520,7 @@ class BrookTroutConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -543,7 +534,7 @@ class LakeTroutConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -557,7 +548,7 @@ class CutthroatTroutConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -571,7 +562,7 @@ class PerchConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -585,7 +576,7 @@ class CatfishConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -599,7 +590,7 @@ class MinnowConf {
     int CatchMethod = 5;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -613,7 +604,7 @@ class BluegillConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -627,7 +618,7 @@ class SaugerConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -641,7 +632,7 @@ class BowfinConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -655,7 +646,7 @@ class SlimySculpinConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -669,7 +660,7 @@ class SeverumConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -683,7 +674,7 @@ class CrayfishConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -697,7 +688,7 @@ class MahimahiConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -711,7 +702,7 @@ class SailfishConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -725,7 +716,7 @@ class AngelfishConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -739,7 +730,7 @@ class AsianSeaBassConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -753,7 +744,7 @@ class BlueMarlinConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -767,7 +758,7 @@ class BonitaConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -781,7 +772,7 @@ class CherrySalmonConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -795,7 +786,7 @@ class ChinookSalmonConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -809,7 +800,7 @@ class SockeyeSalmonConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -823,7 +814,7 @@ class FlatheadMulletConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -837,7 +828,7 @@ class LeopardSharkConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -851,7 +842,7 @@ class PacificCodConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -865,7 +856,7 @@ class RedheadCichlidConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -879,7 +870,7 @@ class RoughneckRockConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -893,7 +884,7 @@ class BlueTangConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -907,7 +898,7 @@ class HairtailFishConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -921,7 +912,7 @@ class HumpheadWrasseConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -935,7 +926,7 @@ class SiameseTigerfishConf {
     int CatchMethod = 3;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -949,7 +940,7 @@ class GreatWhiteSharkConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -963,7 +954,7 @@ class AngelSharkConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -977,7 +968,7 @@ class YellowfinTunaConf {
     int CatchMethod = 1;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -991,7 +982,7 @@ class BloodClamConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -1005,7 +996,7 @@ class MusselConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -1045,7 +1036,7 @@ class KingCrabConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -1058,7 +1049,7 @@ class JellyfishConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -1071,7 +1062,7 @@ class LobsterConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
@@ -1084,7 +1075,7 @@ class BlueLobsterConf {
     int CatchMethod = 4;
     string MeatInfo = "MeatMin and MeatMax determine the minimum and maximum meat pieces for the fillet action. DayZ has a hard limit of 10 fillets max.";
     float MeatMin = 1;
-    float MeatMax = 1;
+    float MeatMax = 2;
     string CatchProbInfo = "0-25; 0 means no chance to catch fish, 25 means high chance";
     int CatchProbability = 15;
     // autoptr TStringArray BiteSpeedInfo = {"How fast the fish bite at each time. Uses values 0.0-1.0 to slow or speed up the catch cycle times during the animation per in-game hour. 24 values as shown below.","12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
