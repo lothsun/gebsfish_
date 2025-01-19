@@ -84,21 +84,20 @@ class gebsfishConfig{
     ref ContainerJunkConf ContainerJunk;
 
     void Load(){
-        if (GetGame().IsDedicatedServer()){
-            if (FileExist(ModFolder + SettingsConfigFile)){
-                //If config exists, load file
-                JsonFileLoader<gebsfishConfig>.JsonLoadFile(ModFolder + SettingsConfigFile, this);
-                Print("[gebsfish] [JSON] Found settings file; Loading gebsfish settings.");
-                // If version mismatch, backup old version of json before replacing it
-                if (ConfigVersion != CONFIG_VERSION){
-                    JsonFileLoader<gebsfishConfig>.JsonSaveFile(ModFolder + FileName + "_old" + FileType, this);
-                    Print("[gebsfish] [JSON] New config version found for mod; Backing up old file and saving as " + ModFolder + FileName + "_old" + FileType + " and generating new config file.");
-                }
-                else {
-                    // Config exists and version matches, stop here.
-                    return;
-                }
+        if (FileExist(ModFolder + SettingsConfigFile)){
+            //If config exists, load file
+            JsonFileLoader<gebsfishConfig>.JsonLoadFile(ModFolder + SettingsConfigFile, this);
+            Print("[gebsfish] [JSON] Found settings file; Loading gebsfish settings.");
+            // If version mismatch, backup old version of json before replacing it
+            if (ConfigVersion != CONFIG_VERSION){
+                JsonFileLoader<gebsfishConfig>.JsonSaveFile(ModFolder + FileName + "_old" + FileType, this);
+                Print("[gebsfish] [JSON] New config version found for mod; Backing up old file and saving as " + ModFolder + FileName + "_old" + FileType + " and generating new config file.");
             }
+            else {
+                // Config exists and version matches, stop here.
+                return;
+            }
+        }
         Print("[gebsfish] [JSON] Generating settings file.");
         //Save config file version to file
         ConfigVersion = CONFIG_VERSION;
@@ -222,7 +221,6 @@ class gebsfishConfig{
 
         //Save it
         Save();
-        }
     }
 
     void Save(){

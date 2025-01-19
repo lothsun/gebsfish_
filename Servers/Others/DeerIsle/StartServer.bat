@@ -43,10 +43,15 @@ SET "PROFILES=%PROJECTDIR%\Servers\Others\DeerIsle\Profiles"
 ::  You can change the -mission=%MISSIONDIR%" Variable with -mission=%EXPMISSIONDIR%" to use Experimental Mission
 :: ====================================================================================================================
 
+@REM :: Start local server.
+@REM start /D "C:\Program Files (x86)\Steam\steamapps\common\DayZServer" DayZServer_x64.exe "-mod=%GLOBALMODS%%MODS%" -filePatching -server "-profiles=%PROFILES%" "-mission=%MISSIONDIR%" "-config=%SERVERCFG%" 
+@REM @REM :: Play on local server.
+
+@REM :: To Solve for BattlEye Kicking you from the game. Join the Lan from the DayZ Luancher. I will work on a fix. 
+
+@REM @REM start /D "%GAMEDIR%\" DayZ_x64.exe "-profiles=%CLIENTLOGSDIR%" "-mod=%GLOBALMODS%%MODS%" -nosplash -noPause -noBenchmark -filePatching -doLogs -scriptDebug=true -connect=127.0.0.1 -port=2302 BattlEye=1
+
 :: Start local server.
-start /D "C:\Program Files (x86)\Steam\steamapps\common\DayZServer" DayZServer_x64.exe "-mod=%GLOBALMODS%%MODS%" -filePatching -server "-profiles=%PROFILES%" "-mission=%MISSIONDIR%" "-config=%SERVERCFG%" 
-@REM :: Play on local server.
-
-:: To Solve for BattlEye Kicking you from the game. Join the Lan from the DayZ Luancher. I will work on a fix. 
-
-@REM start /D "%GAMEDIR%\" DayZ_x64.exe "-profiles=%CLIENTLOGSDIR%" "-mod=%GLOBALMODS%%MODS%" -nosplash -noPause -noBenchmark -filePatching -doLogs -scriptDebug=true -connect=127.0.0.1 -port=2302 BattlEye=1
+start /D "%GAMEDIR%\" DayZDiag_x64.exe -server -filePatching "-mod=%MODS%%GLOBALMODS%" "-profiles=%PROFILES%" "-mission=%MISSIONDIR%" "-config=%SERVERCFG%" 
+:: Play on local server.
+start /D "%GAMEDIR%\" DayZDiag_x64.exe "-profiles=%CLIENTLOGSDIR%" "-mod=%MODS%%GLOBALMODS%" -filePatching -connect=127.0.0.1 -port=2302
