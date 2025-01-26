@@ -42,7 +42,7 @@ class cfgVehicles
 
 	*/
 	class geb_Tackle_Base: Container_Base {
-		scope = 2;
+		scope = 0;
 		displayName = "Tackle Base";
 		descriptionShort = "Tackle Base Class";
 		model = "gebsfish\data\tackle\geb_RedTackle.p3d";
